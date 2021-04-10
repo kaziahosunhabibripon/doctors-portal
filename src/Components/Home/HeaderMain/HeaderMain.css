@@ -1,0 +1,9 @@
+.main{
+    height: '600px';
+}
+.main h1{
+   color:'#3D4457';
+}
+.btn-color{
+    background-color:'#14D1CB' !important;
+}

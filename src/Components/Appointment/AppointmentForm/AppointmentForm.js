@@ -13,11 +13,29 @@ const customStyles = {
     }
 };
 Modal.setAppElement('#root')
+
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn , date}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = data => {
-        console.log(data);
-        closeModal();
+        data.service = appointmentOn;
+        data.date = date;
+        data.created= new Date();
+
+        fetch('http://localhost:5000/addAppointment',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'           
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(success=>{
+            if(success){
+                closeModal();
+                alert('Appointment created successfully');
+            }
+        })    
     };
     return (
         <div>
@@ -44,7 +62,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn , date}) => {
                     <div className="form-group row">
                         <div className="col-4">
                             <select className="form-control" name="gender" ref={register({ required: true })}>
-                                <option disabled={true} value="Not Set">Male</option>
+                                <option value="Not Set">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Not Set">Other</option>
                             </select>

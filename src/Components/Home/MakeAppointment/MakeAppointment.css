@@ -31,4 +31,10 @@ button{
     outline: none;
     border: none !important;
     cursor: pointer;
+    color:grey;
+    font-weight:bold !important;
+}
+.btn-primary{
+    color:whitesmoke !important;
+    font-weight:bold !important;
 }

@@ -1,9 +1,12 @@
 .main{
-    height: '600px';
+    height: 600px;
 }
 .main h1{
-   color:'#3D4457';
+   color:#3D4457;
 }
 .btn-color{
-    background-color:'#14D1CB' !important;
+    color:#14D1CB !important;
+}
+.text-color{
+    color:#14D1CB !important;
 }

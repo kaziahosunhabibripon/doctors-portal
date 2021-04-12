@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import AppointmentsbyDate from '../AppointmentsbyDate/AppointmentsbyDate';
 import Sidebar from '../Sidebar/Sidebar';
 import 'react-calendar/dist/Calendar.css';
+import { UserContext } from '../../../App';
 
 const DashBord = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState(new Date());   
     const[appointments, setAppointments] = useState([]);
     const handleDateChange= date=>{
@@ -21,12 +23,12 @@ const DashBord = () => {
     }, [selectedDate])
     return (
         <section>
-            <div className="container-fluid row container-style">
+            <div className="container-fluid row container-style ">
                 <div className="col-md-2">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-5">
-                    <Calendar
+                <div className="col-md-5 ps-5">
+                    <Calendar  className="p-2 text-center align-center"
                         onChange={handleDateChange}
                         value={new Date()}
                     />

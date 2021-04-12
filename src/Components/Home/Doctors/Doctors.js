@@ -1,23 +1,20 @@
 import React from 'react';
-import wilson from '../../../images/doctor.png';
-import muni from '../../../images/muni.png';
-import suni from '../../../images/suni.png';
 import Doctor from '../Doctor/Doctor';
 const doctorsData = [
     {
         name:'Dr.Muni',
         phone:'+8801736252',
-        img:muni
+        img:'muni.png'
     },
     {
         name:'Dr.Luni',
         phone:'+8801752352',
-        img:wilson
+        img:'doctor.png'
     },
     {
         name:'Dr.Suni',
         phone:'+8801752362',
-        img:suni
+        img:'suni.png'
     }
 ]
 

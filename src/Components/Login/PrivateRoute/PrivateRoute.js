@@ -4,6 +4,7 @@ import { UserContext } from '../../../App';
 import jwt_decode from "jwt-decode";
 const PrivateRoute = ({ children, ...rest }) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const isLoggedIn = ()=>{
         const token = sessionStorage.getItem('token');
         if(!token){
@@ -19,6 +20,7 @@ const PrivateRoute = ({ children, ...rest }) => {
             {...rest}
             render={({ location }) =>
                 (loggedInUser.email || isLoggedIn())? (
+                    // loggedInUser.email ?(
                     children
                 ) : (
                     <Redirect

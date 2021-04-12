@@ -8,18 +8,18 @@ const Navbar = () => {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav ml-auto">
+                <ul className="navbar-nav ms-auto">
                    <li className="nav-item active">
-                        <Link className="nav-link mr-5" to="#home">Home <span className="sr-only">(current)</span></Link>
+                        <Link className="nav-link me-5" to="/">Home <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link me-5" to="#about">About</Link>
+                        <Link className="nav-link me-5" to="/login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link me-5" to="#dental">Dental Services</Link>
+                        <Link className="nav-link me-5" to="/dashboard">Dashboard</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link me-5 text-white" to="#reviews">Reviews</Link>
+                        <Link className="nav-link me-5 text-white" to="/dashboard">Admin</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link me-5 text-white" to="#blogs">Blogs</Link>
